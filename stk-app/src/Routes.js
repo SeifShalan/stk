@@ -1,8 +1,5 @@
 import React, {lazy} from "react";
-import {
-    Switch,
-    Route,
-} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 
 const Landing = lazy(() => import("./views/Landing"));
 const Login = lazy(() => import("./views/Login"));

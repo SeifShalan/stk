@@ -15,6 +15,7 @@ const useStyles = makeStyles({
     button2: {
         color: '#111B47',
         width: 100,
+        height: 35,
         textTransform: 'capitalize',
         fill: 'white',
         boxShadow: 'none',

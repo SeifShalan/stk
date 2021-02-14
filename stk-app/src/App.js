@@ -1,8 +1,6 @@
 import './App.css';
 import React, {Suspense} from "react";
-import {
-    BrowserRouter as Router,
-} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 import Routes from './Routes';
 import {ThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 
