@@ -1,6 +1,60 @@
 import React from 'react';
-import {makeStyles} from "@material-ui/core/styles";
-import {Box, Grid, TextField, Typography} from "@material-ui/core";
+import {makeStyles, withStyles, createMuiTheme} from "@material-ui/core/styles";
+import {
+    Box,
+    Grid,
+    FormControlLabel,
+    Checkbox,
+    InputLabel,
+    InputBase,
+    FormControl,
+    ThemeProvider,
+    Typography,
+    Link,
+    Button,
+} from "@material-ui/core";
+import {
+    CheckBoxOutlineBlank,
+    CheckBox
+} from "@material-ui/icons"
+
+const loginTheme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#3A5FFF',
+        },
+    },
+    typography: {
+        fontFamily: [
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            'Roboto',
+            '"Helvetica Neue"',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+        ].join(','),
+    },
+    overrides: {
+        MuiInputLabel: { // Name of the component ⚛️ / style sheet
+            root: { // Name of the rule
+                color: "white",
+                "&$focused": { // increase the specificity for the pseudo class
+                    color: '#3A5FFF'
+                }
+            }
+        },
+        MuiFormControlLabel: {
+            label: {
+                fontSize: 12,
+                color: "white",
+            },
+        },
+    }
+});
 
 const useStyles = makeStyles({
     container: {
@@ -9,71 +63,125 @@ const useStyles = makeStyles({
     },
     image: {
         height: 65,
+        marginBottom: 50
     },
-    textfield: {
-        background: 'white',
-        borderRadius: 5,
+    icon: {
+        color: 'white'
+    },
+    link: {
+        color: '#3A5FFF',
+        fontSize: 12,
+    },
+    button: {
+        textTransform: 'capitalize',
+        marginTop: 35,
+        width: 350,
         height: 45,
-        border: 'none',
-    },
-    input: {
-      height: 45,
+        fill: 'white',
+        boxShadow: 'none',
+        '&:hover': {
+            boxShadow: 'none'
+        },
     },
 });
 
+const BootstrapInput = withStyles((theme) => ({
+    root: {
+        'label + &': {
+            width: 350,
+            marginTop: theme.spacing(2),
+        },
+    },
+    input: {
+        borderRadius: 5,
+        backgroundColor: theme.palette.common.white,
+        border: '2px solid #111B47',
+        fontSize: 14,
+        padding: '10px 12px',
+        transition: theme.transitions.create(['border-color', 'box-shadow']),
+        '&:focus': {
+            borderColor: '#3A5FFF',
+        },
+    },
+}))(InputBase);
+
 const Login = () => {
     const classes = useStyles();
+    const preventDefault = (event) => event.preventDefault();
 
     return (
-        <Box className={classes.container}>
-            <Grid container spacing={0} direction="column" alignItems="center" justify="center"
-                  style={{minHeight: '100vh'}}>
-                <Grid item>
-                    <img
-                        alt="Logo"
-                        className={classes.image}
-                        src="/images/logo.svg"
-                    />
-                </Grid>
-                <Grid item>
-                    <form>
-                        <Grid container direction="column" justify="space-evenly" style={{minWidth: '25vw'}}>
-                            <Grid item>
-                                <Typography variant="overline">Email or username</Typography>
-                                <TextField
-                                    variant="filled"
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    id="email"
-                                    name="email"
-                                    className={classes.textfield}
-                                    InputProps={{
-                                        className: classes.input
-                                    }}
-                                />
+        <ThemeProvider theme={loginTheme}>
+            <Box className={classes.container}>
+                <Grid container spacing={0} direction="column" alignItems="center" justify="center"
+                      style={{minHeight: '100vh'}}>
+                    <Grid item>
+                        <img
+                            alt="Logo"
+                            className={classes.image}
+                            src="/images/logo.svg"
+                        />
+                    </Grid>
+                    <Grid item>
+                        <form>
+                            <Grid container direction="column" alignItems="center" spacing={2}>
+                                <Grid item>
+                                    <FormControl>
+                                        <InputLabel shrink htmlFor="email-input">
+                                            Email or username
+                                        </InputLabel>
+                                        <BootstrapInput id="email-input" fullWidth/>
+                                    </FormControl>
+                                </Grid>
+                                <Grid item>
+                                    <Grid container direction="column" alignItems="left">
+                                        <FormControl>
+                                            <InputLabel shrink htmlFor="password-input">
+                                                Password
+                                            </InputLabel>
+                                            <BootstrapInput id="password-input" type="password" fullWidth/>
+                                        </FormControl>
+                                        <Grid container direction="row" alignItems="center" justify="space-between">
+                                            <Grid item>
+                                                <FormControlLabel
+                                                    control={
+                                                        <Checkbox
+                                                            name="remember"
+                                                            icon={<CheckBoxOutlineBlank fontSize="small"
+                                                                                        className={classes.icon}/>}
+                                                            checkedIcon={<CheckBox fontSize="small"/>}
+                                                            color="primary"
+                                                            style={{paddingRight: 4}}
+                                                        />
+                                                    }
+                                                    label="Remember me"
+                                                    className={classes.label}
+                                                />
+                                            </Grid>
+                                            <Grid item>
+                                                <Link href="#" onClick={preventDefault} color="inherit"
+                                                      className={classes.link}>
+                                                    Forgot your username or password?
+                                                </Link>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid item>
+                                    <Button variant="contained" color="primary" fullWidth className={classes.button}>
+                                        Log in
+                                    </Button>
+                                </Grid>
+                                <Grid item>
+                                    <Typography style={{color: "white", fontSize: 12, marginTop:-5}}>
+                                        Don’t have an account? Click <Link href="#" onClick={preventDefault} color="primary">here</Link> to sign up!
+                                    </Typography>
+                                </Grid>
                             </Grid>
-                            <Grid item>
-                                <p>Password</p>
-                                <TextField
-                                    variant="filled"
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    name="password"
-                                    type="password"
-                                    id="password"
-                                    className={classes.textfield}
-                                    InputProps={{
-                                        className: classes.input
-                                    }}
-                                />
-                            </Grid>
-                        </Grid>
-                    </form>
+                        </form>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </Box>
+            </Box>
+        </ThemeProvider>
     );
 }
 
