@@ -1,24 +1,26 @@
 import {AppBar, Button, Grid, Link, Toolbar} from "@material-ui/core";
+import {Link as LinkRouter} from 'react-router-dom';
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-    root: {
-        fontSize: 14,
-    },
     toolbar: {
         marginLeft: 20,
         marginRight: 20,
         height: 70,
+        fontSize: 14,
+        fontWeight: 400,
     },
     image: {
         height: 28,
-        marginRight: 20,
+        marginRight: 30,
     },
     button2: {
         color: '#111B47',
         width: 100,
         height: 35,
+        fontSize: "inherit",
+        fontWeight: "inherit",
         textTransform: 'capitalize',
         fill: 'white',
         boxShadow: 'none',
@@ -32,18 +34,20 @@ const Header = () => {
     const classes = useStyles();
     const preventDefault = (event) => event.preventDefault();
 
-    return(
+    return (
         <AppBar position="static" elevation={0}>
             <Toolbar className={classes.toolbar}>
                 <Grid justify="space-between" alignItems="center" container>
                     <Grid item>
                         <Grid spacing={3} alignItems="center" container>
                             <Grid item>
-                                <img
-                                    alt="Logo"
-                                    className={classes.image}
-                                    src="/images/logo.svg"
-                                />
+                                <LinkRouter to="/">
+                                    <img
+                                        alt="Logo"
+                                        className={classes.image}
+                                        src="/images/logo.svg"
+                                    />
+                                </LinkRouter>
                             </Grid>
                             <Grid item>
                                 <Link href="#" onClick={preventDefault} color="inherit" underline="none">
@@ -70,7 +74,7 @@ const Header = () => {
                     <Grid item>
                         <Grid spacing={2} alignItems="center" container>
                             <Grid item>
-                                <Link href="#" onClick={preventDefault} color="inherit" underline="none">
+                                <Link href="/login" color="inherit" underline="none">
                                     Log In
                                 </Link>
                             </Grid>

@@ -1,4 +1,5 @@
 import './App.css';
+import Loading from './components/Loading'
 import React, {Suspense} from "react";
 import {BrowserRouter as Router} from "react-router-dom";
 import Routes from './Routes';
@@ -28,7 +29,7 @@ const theme = createMuiTheme({
 
 const App = () => {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loading/>}>
             <ThemeProvider theme={theme}>
                 <Router>
                     <Routes/>

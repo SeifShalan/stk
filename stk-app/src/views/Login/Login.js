@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link as LinkRouter} from 'react-router-dom';
 import {makeStyles, withStyles, createMuiTheme} from "@material-ui/core/styles";
 import {
     Box,
@@ -115,11 +116,13 @@ const Login = () => {
                 <Grid container spacing={0} direction="column" alignItems="center" justify="center"
                       style={{minHeight: '100vh'}}>
                     <Grid item>
-                        <img
-                            alt="Logo"
-                            className={classes.image}
-                            src="/images/logo.svg"
-                        />
+                        <LinkRouter to="/">
+                            <img
+                                alt="Logo"
+                                className={classes.image}
+                                src="/images/logo.svg"
+                            />
+                        </LinkRouter>
                     </Grid>
                     <Grid item>
                         <form>
@@ -133,7 +136,7 @@ const Login = () => {
                                     </FormControl>
                                 </Grid>
                                 <Grid item>
-                                    <Grid container direction="column" alignItems="left">
+                                    <Grid container direction="column">
                                         <FormControl>
                                             <InputLabel shrink htmlFor="password-input">
                                                 Password
@@ -172,8 +175,9 @@ const Login = () => {
                                     </Button>
                                 </Grid>
                                 <Grid item>
-                                    <Typography style={{color: "white", fontSize: 12, marginTop:-5}}>
-                                        Don’t have an account? Click <Link href="#" onClick={preventDefault} color="primary">here</Link> to sign up!
+                                    <Typography style={{color: "white", fontSize: 12, marginTop: -5}}>
+                                        Don’t have an account? Click <Link href="#" onClick={preventDefault}
+                                                                           color="primary">here</Link> to sign up!
                                     </Typography>
                                 </Grid>
                             </Grid>
