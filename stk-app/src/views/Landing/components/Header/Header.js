@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     },
     button2: {
         color: '#111B47',
-        width: 100,
+        width: 90,
         height: 35,
         fontSize: "inherit",
         fontWeight: "inherit",
@@ -50,7 +50,7 @@ const Header = () => {
                                 </LinkRouter>
                             </Grid>
                             <Grid item>
-                                <Link href="#" onClick={preventDefault} color="inherit" underline="none">
+                                <Link href="/" color="inherit" underline="none">
                                     Home
                                 </Link>
                             </Grid>
@@ -79,7 +79,7 @@ const Header = () => {
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Button className={classes.button2} variant="contained">Sign Up</Button>
+                                <Button className={classes.button2} variant="contained" href="/register">Sign Up</Button>
                             </Grid>
                         </Grid>
                     </Grid>

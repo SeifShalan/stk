@@ -78,6 +78,7 @@ const useStyles = makeStyles({
         marginTop: 35,
         width: 350,
         height: 45,
+        fontWeight: 400,
         fill: 'white',
         boxShadow: 'none',
         '&:hover': {
