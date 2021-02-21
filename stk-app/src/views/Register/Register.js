@@ -1,9 +1,9 @@
 import React from 'react';
-import {createMuiTheme, fade, makeStyles, withStyles} from "@material-ui/core/styles";
+import {createMuiTheme, makeStyles} from "@material-ui/core/styles";
 import {Link as LinkRouter} from 'react-router-dom';
 import {
     Box,
-    Grid, InputBase, TextField, Button,
+    Grid, TextField, Button,
     ThemeProvider, Typography,
 } from "@material-ui/core";
 
@@ -19,6 +19,7 @@ const useStyles = makeStyles({
     button: {
         color: '#fff',
         background: '#111B47',
+        marginTop: 10,
         width: 170,
         height: 50,
         fontSize: "inherit",
@@ -103,7 +104,7 @@ const Register = () => {
                             <Grid item>
                                 <Typography style={{fontSize: 20, fontWeight: 500}}>Create your account
                                     now!</Typography>
-                                <Typography style={{fontSize: 16, fontWeight: 400}}>Lorem ipsum dolor sit amet,
+                                <Typography style={{fontSize: 14, fontWeight: 400}}>Lorem ipsum dolor sit amet,
                                     consectetur adipiscing elit.</Typography>
                             </Grid>
                             <Grid item>
@@ -138,11 +139,28 @@ const Register = () => {
                                         <Button className={classes.button} variant="contained">Continue</Button>
                                     </Grid>
                                 </Grid>
+                                <Grid item>
+                                    <Typography style={{fontSize: 10, fontWeight: 300, marginTop: 35}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum non consectetur a erat nam at lectus urna duis. Eget aliquet nibh praesent tristique magna sit amet purus gravida. Eros donec ac odio tempor orci dapibus. Ullamcorper a lacus vestibulum sed arcu non odio euismod. Est lorem ipsum dolor sit amet. Vitae aliquet nec ullamcorper sit amet risus nullam eget felis. Magna sit amet purus gravida quis blandit turpis. Egestas purus viverra accumsan in nisl nisi scelerisque. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Pharetra diam sit amet nisl suscipit adipiscing bibendum. Id leo in vitae turpis massa sed elementum tempus egestas. Eget felis eget nunc lobortis mattis aliquam faucibus. Porttitor massa id neque aliquam vestibulum morbi blandit.
+                                        proin libero nunc consequat interdum varius.</Typography>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item xs={4} style={{background: '#F6F6F6'}}>
-                        hi
+                    <Grid item xs={4} style={{paddingLeft: 40, paddingRight: 225, paddingTop: 160, background: '#F6F6F6'}}>
+                        <Grid container="column" justify="flex-start" spacing={8}>
+                            <Grid item>
+                                <Typography style={{fontSize: 20, fontWeight: 500}}>Title Number 1</Typography>
+                                <Typography style={{fontSize: 14, fontWeight: 400}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</Typography>
+                            </Grid>
+                            <Grid item>
+                                <Typography style={{fontSize: 20, fontWeight: 500}}>Title Number 2</Typography>
+                                <Typography style={{fontSize: 14, fontWeight: 400}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</Typography>
+                            </Grid>
+                            <Grid item>
+                                <Typography style={{fontSize: 20, fontWeight: 500}}>Title Number 3</Typography>
+                                <Typography style={{fontSize: 14, fontWeight: 400}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</Typography>
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Box>

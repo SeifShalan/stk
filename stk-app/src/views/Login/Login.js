@@ -177,8 +177,7 @@ const Login = () => {
                                 </Grid>
                                 <Grid item>
                                     <Typography style={{color: "white", fontSize: 12, marginTop: -5}}>
-                                        Don’t have an account? Click <Link href="#" onClick={preventDefault}
-                                                                           color="primary">here</Link> to sign up!
+                                        Don’t have an account? Click <Link href="/register" color="primary">here</Link> to sign up!
                                     </Typography>
                                 </Grid>
                             </Grid>
