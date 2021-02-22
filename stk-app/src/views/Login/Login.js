@@ -171,7 +171,7 @@ const Login = () => {
                                     </Grid>
                                 </Grid>
                                 <Grid item>
-                                    <Button variant="contained" color="primary" fullWidth className={classes.button}>
+                                    <Button variant="contained" color="primary" href="/dashboard" fullWidth className={classes.button}>
                                         Log in
                                     </Button>
                                 </Grid>

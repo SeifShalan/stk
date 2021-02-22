@@ -136,7 +136,7 @@ const Register = () => {
                                                     fullWidth/>
                                     </Grid>
                                     <Grid item>
-                                        <Button className={classes.button} variant="contained">Continue</Button>
+                                        <Button className={classes.button} variant="contained" href="/dashboard">Continue</Button>
                                     </Grid>
                                 </Grid>
                                 <Grid item>

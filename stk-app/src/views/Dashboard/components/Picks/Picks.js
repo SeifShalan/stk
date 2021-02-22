@@ -29,6 +29,7 @@ const theme = createMuiTheme({
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 paddingBottom: 40,
+                paddingTop: 10,
                 paddingLeft: 40,
                 paddingRight: 40,
             }
@@ -69,13 +70,45 @@ const columns = [
             sort: false,
         }
     },
+    {
+        name: "current",
+        label: "Current Price",
+        options: {
+            filter: true,
+            sort: false,
+        }
+    },
+    {
+        name: "predicted",
+        label: "Predicted Price",
+        options: {
+            filter: true,
+            sort: false,
+        }
+    },
+    {
+        name: "rank",
+        label: "stk. Rating",
+        options: {
+            filter: true,
+            sort: false,
+        }
+    },
 ];
 
 const data = [
-    { name: "Joe James", company: "Test Corp", city: "Yonkers", state: "NY" },
-    { name: "John Walsh", company: "Test Corp", city: "Hartford", state: "CT" },
-    { name: "Bob Herm", company: "Test Corp", city: "Tampa", state: "FL" },
-    { name: "James Houston", company: "Test Corp", city: "Dallas", state: "TX" },
+    { name: "", company: "Test Corp", city: "Yonkers", state: "NY" },
+    { name: "", company: "Test Corp", city: "Hartford", state: "CT" },
+    { name: "", company: "Test Corp", city: "Tampa", state: "FL" },
+    { name: "", company: "Test Corp", city: "Dallas", state: "TX" },
+    { name: "", company: "Test Corp", city: "Yonkers", state: "NY" },
+    { name: "", company: "Test Corp", city: "Hartford", state: "CT" },
+    { name: "", company: "Test Corp", city: "Tampa", state: "FL" },
+    { name: "", company: "Test Corp", city: "Dallas", state: "TX" },
+    { name: "", company: "Test Corp", city: "Yonkers", state: "NY" },
+    { name: "", company: "Test Corp", city: "Hartford", state: "CT" },
+    { name: "", company: "Test Corp", city: "Tampa", state: "FL" },
+    { name: "", company: "Test Corp", city: "Dallas", state: "TX" },
 ];
 
 const options = {
@@ -83,6 +116,7 @@ const options = {
     print: 'false',
     selectableRows: 'none',
     download: 'false',
+    viewColumns: 'false',
 };
 
 const Picks = () => {
