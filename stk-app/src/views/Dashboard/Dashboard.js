@@ -1,11 +1,12 @@
 import React from 'react';
 import {makeStyles, withStyles} from "@material-ui/core/styles";
-import {Header} from './components'
 import {Tabs, Tab, Box, Typography} from "@material-ui/core";
+import {News, Picks, Stocks, Header} from './components';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
-    root: {
+    container: {
+        height: '100vh',
         background: "#F5F5F5",
     },
 
@@ -19,7 +20,7 @@ const StyledTabs = withStyles({
         '& > span': {
             maxWidth: 40,
             width: '100%',
-            backgroundColor: '#3A5FFF',
+            backgroundColor: '#111B47',
         },
     },
 })((props) => <Tabs {...props} TabIndicatorProps={{children: <span/>}}/>);
@@ -51,7 +52,7 @@ function TabPanel(props) {
         >
             {value === index && (
                 <Box p={3}>
-                    <Typography>{children}</Typography>
+                    <Typography component={'span'}>{children}</Typography>
                 </Box>
             )}
         </div>
@@ -81,7 +82,7 @@ const Dashboard = () => {
     };
 
     return (
-        <>
+        <div style={{height: '100vh', background: "#F5F5F5"}}>
             <Header/>
             <StyledTabs value={value} onChange={handleChange}>
                 <StyledTab label="Stocks" {...a11yProps(0)} />
@@ -89,15 +90,15 @@ const Dashboard = () => {
                 <StyledTab label="News" {...a11yProps(2)} />
             </StyledTabs>
             <TabPanel value={value} index={0}>
-                Page One
+                <Stocks/>
             </TabPanel>
             <TabPanel value={value} index={1}>
-                Page Two
+                <Picks/>
             </TabPanel>
             <TabPanel value={value} index={2}>
-                Page Three
+                <News/>
             </TabPanel>
-        </>
+        </div>
     );
 
 }

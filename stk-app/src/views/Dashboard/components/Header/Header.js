@@ -1,4 +1,5 @@
-import {AppBar, Button, Grid, Link, Toolbar} from "@material-ui/core";
+import {AppBar, Button, Grid, IconButton, Badge, Toolbar, Typography} from "@material-ui/core";
+import NotificationsIcon from '@material-ui/icons/Notifications';
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 
@@ -18,15 +19,14 @@ const useStyles = makeStyles({
         transform: 'translate(-50%, -50%)',
     },
     button2: {
-        color: '#111B47',
-        width: 90,
-        height: 35,
-        fontSize: "inherit",
-        fontWeight: "inherit",
-        textTransform: 'capitalize',
-        fill: 'white',
+        background: '#8E1EFF',
+        maxWidth: '35px',
+        maxHeight: '35px',
+        minWidth: '35px',
+        minHeight: '35px',
         boxShadow: 'none',
         '&:hover': {
+            background: '#7E1AE1',
             boxShadow: 'none'
         },
     },
@@ -34,25 +34,29 @@ const useStyles = makeStyles({
 
 const Header = () => {
     const classes = useStyles();
+    const preventDefault = (event) => event.preventDefault();
 
     return (
         <AppBar position="static" elevation={0}>
             <Toolbar className={classes.toolbar}>
-                    <img
-                        alt="Logo"
-                        className={classes.image}
-                        src="/images/logo.svg"
-                    />
+                <img
+                    alt="Logo"
+                    className={classes.image}
+                    src="/images/logo.svg"
+                />
 
-                <Grid spacing={2} direction="row" alignItems="center" justify="flex-end" container>
+                <Grid spacing={1} direction="row" alignItems="center" justify="flex-end" container>
                     <Grid item>
-                        <Link href="/login" color="inherit" underline="none">
-                            Log In
-                        </Link>
+                        <IconButton style={{color: '#fff'}}>
+                            <Badge color="error" overlap="circle" variant="dot">
+                                <NotificationsIcon/>
+                            </Badge>
+                        </IconButton>
                     </Grid>
                     <Grid item>
-                        <Button className={classes.button2} variant="contained" href="/register">Sign
-                            Up</Button>
+                        <Button className={classes.button2} variant="contained" href="#" onClick={preventDefault}>
+                            <Typography style={{color: '#fff', fontWeight: 600, fontSize: 18}}>S</Typography>
+                        </Button>
                     </Grid>
                 </Grid>
             </Toolbar>

@@ -1,0 +1,114 @@
+import {Paper, Grid, Typography} from "@material-ui/core";
+import React from "react";
+import {Area, CartesianGrid, XAxis, YAxis, Tooltip, AreaChart, ResponsiveContainer} from "recharts";
+import {makeStyles} from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+    paper: {
+        width: '92vw',
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        boxShadow: '0px 5px 30px 0px rgba(50, 50, 50, 0.2)',
+        paddingTop: 40,
+        paddingBottom: 40,
+        paddingLeft: 40,
+        paddingRight: 40,
+        borderRadius: 10,
+    },
+});
+
+const Stocks = () => {
+    const classes = useStyles();
+    const data = [
+        {
+            "name": "1",
+            "uv": 4000,
+            "pv": 2400,
+            "amt": 2400
+        },
+        {
+            "name": "2",
+            "uv": 3000,
+            "pv": 1398,
+            "amt": 2210
+        },
+        {
+            "name": "3",
+            "uv": 2000,
+            "pv": 9800,
+            "amt": 2290
+        },
+        {
+            "name": "4",
+            "uv": 2780,
+            "pv": 3908,
+            "amt": 2000
+        },
+        {
+            "name": "5",
+            "uv": 1890,
+            "pv": 4800,
+            "amt": 2181
+        },
+        {
+            "name": "6",
+            "uv": 2390,
+            "pv": 3800,
+            "amt": 2500
+        },
+        {
+            "name": "7",
+            "uv": 3490,
+            "pv": 4300,
+            "amt": 2100
+        }
+    ]
+
+    return (
+        <Paper className={classes.paper}>
+            <Grid container direction="row" spacing={5}>
+                <Grid item xs={9}>
+                    <div style={{display:"flex", alignItems:"baseline", color: "#111B47"}}>
+                        <Typography
+                            style={{fontSize: 20, fontWeight: 700, textTransform: "uppercase", marginRight: 5}} noWrap>AMER</Typography>
+                        <Typography style={{fontSize: 14, fontWeight: 400, textTransform: "uppercase"}} noWrap>AMER GROUP HOLDING CO SAE</Typography>
+                    </div>
+                    <div style={{display:"flex", alignItems:"baseline"}}>
+                        <Typography
+                            style={{fontSize: 18, fontWeight: 600, textTransform: "uppercase", marginRight: 3}} noWrap>32.58</Typography>
+                        <Typography style={{fontSize: 16, fontWeight: 500, textTransform: "uppercase"}} noWrap>EGP</Typography>
+                    </div>
+                    <div style={{display:"flex", alignItems:"baseline"}}>
+                        <Typography style={{fontSize: 16, fontWeight: 500, textTransform: "uppercase", color: "#6AC37E", marginRight: 3}} noWrap>+0.12</Typography>
+                        <Typography style={{fontSize: 16, fontWeight: 500, textTransform: "uppercase", color: "#6AC37E"}} noWrap>(1.27%)</Typography>
+                    </div>
+
+                    <ResponsiveContainer width="99%" aspect={3}>
+                        <AreaChart data={data} margin={{ top: 30, right: 0, left: 0, bottom: 0 }}>
+                            <defs>
+                                <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+                                    <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+                                </linearGradient>
+                            </defs>
+                            <XAxis dataKey="name"/>
+                            <YAxis/>
+                            <CartesianGrid strokeDasharray="1" vertical={false}/>
+                            <Tooltip/>
+                            <Area type="monotone" dataKey="amt" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)"/>
+                        </AreaChart>
+                    </ResponsiveContainer>
+                </Grid>
+                <Grid item>
+                    <Typography
+                        style={{fontSize: 20, fontWeight: 500, textTransform: "capitalize"}} >Company Selector</Typography>
+                    <Typography style={{fontSize: 14, fontWeight: 400}} >Lorem ipsum dolor sit amet.</Typography>
+                </Grid>
+            </Grid>
+        </Paper>
+    );
+}
+
+
+export default Stocks;
