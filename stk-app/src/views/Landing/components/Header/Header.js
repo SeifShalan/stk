@@ -13,7 +13,8 @@ const useStyles = makeStyles({
     },
     image: {
         height: 28,
-        marginRight: 30,
+        marginRight: 20,
+        display: 'flex',
     },
     button2: {
         color: '#111B47',

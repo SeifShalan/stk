@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Grid, Typography, Link, Container, TextField, Button} from "@material-ui/core";
+import {Box, Grid, Typography, Link, Container, TextField, InputAdornment, IconButton} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import SendIcon from '@material-ui/icons/Send';
 
@@ -15,6 +15,18 @@ const useStyles = makeStyles({
     },
     image: {
         height: 28,
+    },
+    button: {
+        background: "#3A5FFF",
+        height: 35,
+        width: 35,
+        padding: 0,
+        borderRadius: 0,
+        boxShadow: 'none',
+        '&:hover': {
+            boxShadow: 'none',
+            background: "#2F4CCA",
+        },
     },
 });
 
@@ -104,14 +116,20 @@ const Footer = () => {
                             <Grid item>
                                 <Typography
                                     style={{fontSize: 15, fontWeight: 500, marginBottom: 5}}>Newsletter</Typography>
-                                <NewsLetterField id="newsletter" placeholder="Email Address" variant="outlined"/>
-                                <Button
-                                    variant="contained"
-                                    color="secondary"
-                                >
-                                    <SendIcon />
-                                </Button>
-                                <Typography style={{fontSize: 14, fontWeight: 300}}>Lorem ipsum dolor sit amet, consectetur adipiscing.</Typography>
+                                <NewsLetterField
+                                    id="newsletter"
+                                    placeholder="Email Address"
+                                    variant="outlined"
+                                    endAdornment={
+                                        <InputAdornment position="end">
+                                            <IconButton edge="end">
+                                                <SendIcon style={{ color: "#3A5FFF" }}/>
+                                            </IconButton>
+                                        </InputAdornment>
+                                    }
+                                />
+                                <Typography style={{fontSize: 14, fontWeight: 300}}>Lorem ipsum dolor sit
+                                    amet,<br/> consectetur adipiscing.</Typography>
                             </Grid>
                         </Grid>
                     </Grid>

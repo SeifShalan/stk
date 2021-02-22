@@ -1,7 +1,6 @@
 import React from 'react';
 import {Button, Grid, Typography} from '@material-ui/core';
-import Header from './components/Header'
-import Footer from './components/Footer'
+import {Header, Footer} from './components/'
 import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -23,6 +22,7 @@ const useStyles = makeStyles({
         fill: 'white',
         boxShadow: 'none',
         '&:hover': {
+            background: '#0C1332',
             boxShadow: 'none'
         },
     },
@@ -42,7 +42,7 @@ const Landing = () => {
                             <Typography style={{fontSize: 16, fontWeight: 400, color: "#000000"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</Typography>
                         </Grid>
                         <Grid item>
-                            <Button className={classes.button} variant="contained">Sign Up</Button>
+                            <Button className={classes.button} variant="contained" href="/register">Sign Up</Button>
                         </Grid>
                     </Grid>
                 </Grid>

@@ -6,6 +6,7 @@ const Login = lazy(() => import("./views/Login"));
 const Register = lazy(() => import("./views/Register"));
 const NotFound = lazy(() => import("./views/NotFound"));
 const Loading = lazy(() => import("./components/Loading"));
+const Dashboard = lazy(() => import("./views/Dashboard"));
 
 const Routes = () => {
     return (
@@ -13,7 +14,8 @@ const Routes = () => {
             <Route path="/" component={Landing} exact />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/Loading" component={Loading} />
+            <Route path="/loading" component={Loading} />
+            <Route path="/dashboard" component={Dashboard} />
             <Route component={NotFound} />
         </Switch>
     );
