@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {makeStyles, withStyles} from "@material-ui/core/styles";
-import {Tabs, Tab, Box, Typography} from "@material-ui/core";
-import {News, Picks, Stocks, Header} from './components';
+import {Tabs, Tab, Box, Fade, Modal, Backdrop} from "@material-ui/core";
+import {News, Picks, Stocks, Header, UserModal} from './components';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
@@ -40,7 +40,7 @@ const StyledTab = withStyles((theme) => ({
 }))((props) => <Tab disableRipple {...props} />);
 
 function TabPanel(props) {
-    const { children, value, index, ...other } = props;
+    const {children, value, index, ...other} = props;
 
     return (
         <div
@@ -52,7 +52,7 @@ function TabPanel(props) {
         >
             {value === index && (
                 <Box p={3}>
-                    <Typography component={'span'}>{children}</Typography>
+                    {children}
                 </Box>
             )}
         </div>
@@ -75,15 +75,35 @@ function a11yProps(index) {
 
 const Dashboard = () => {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = useState(2);
+    const [open, setOpen] = useState(false);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
+    const handleModalOpen = () => {
+        setOpen(true);
+    };
+
+    const handleModalClose = () => {
+        setOpen(false);
+    };
+
     return (
         <div style={{height: '100vh', background: "#F5F5F5"}}>
-            <Header/>
+            <Header handleModalOpen={handleModalOpen}/>
+            <Modal open={open}
+                   onClose={handleModalClose}
+                   closeAfterTransition
+                   BackdropComponent={Backdrop}
+                   BackdropProps={{
+                       timeout: 500
+                   }}>
+                <Fade in={open}>
+                    <UserModal/>
+                </Fade>
+            </Modal>
             <StyledTabs value={value} onChange={handleChange}>
                 <StyledTab label="Stocks" {...a11yProps(0)} />
                 <StyledTab label="Best Picks" {...a11yProps(1)} />

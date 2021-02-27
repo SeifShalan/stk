@@ -32,9 +32,8 @@ const useStyles = makeStyles({
     },
 });
 
-const Header = () => {
+const Header = (props) => {
     const classes = useStyles();
-    const preventDefault = (event) => event.preventDefault();
 
     return (
         <AppBar position="static" elevation={0}>
@@ -54,7 +53,7 @@ const Header = () => {
                         </IconButton>
                     </Grid>
                     <Grid item>
-                        <Button className={classes.button2} variant="contained" href="#" onClick={preventDefault}>
+                        <Button className={classes.button2} variant="contained" onClick={props.handleModalOpen}>
                             <Typography style={{color: '#fff', fontWeight: 600, fontSize: 18}}>S</Typography>
                         </Button>
                     </Grid>

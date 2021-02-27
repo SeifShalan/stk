@@ -9,10 +9,8 @@ const useStyles = makeStyles({
     },
     paper: {
         boxShadow: '0px 5px 30px 0px rgba(50, 50, 50, 0.2)',
-        paddingTop: 40,
-        paddingBottom: 40,
-        paddingLeft: 40,
-        paddingRight: 40,
+        paddingTop: 10,
+        paddingBottom: 10,
         borderRadius: 10,
     },
 });
@@ -21,7 +19,7 @@ const News = () => {
     const classes = useStyles();
 
     return (
-        <div style={{width: '92vw', height: '60vh', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>
+        <div style={{height: '60vh', marginLeft: '22', marginRight: '22'}}>
             <Grid container direction="row" justify="space-between" alignItems="stretch">
                 <Grid item>
                     <Grid container direction="column" justify="space-evenly" alignItems="flex-start">
