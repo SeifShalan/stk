@@ -75,7 +75,7 @@ function a11yProps(index) {
 
 const Dashboard = () => {
     const classes = useStyles();
-    const [value, setValue] = useState(2);
+    const [value, setValue] = useState(0);
     const [open, setOpen] = useState(false);
 
     const handleChange = (event, newValue) => {
@@ -105,15 +105,15 @@ const Dashboard = () => {
                 </Fade>
             </Modal>
             <StyledTabs value={value} onChange={handleChange}>
-                <StyledTab label="Stocks" {...a11yProps(0)} />
-                <StyledTab label="Best Picks" {...a11yProps(1)} />
+                <StyledTab label="Home" {...a11yProps(0)} />
+                <StyledTab label="All Stocks" {...a11yProps(1)} />
                 <StyledTab label="News" {...a11yProps(2)} />
             </StyledTabs>
             <TabPanel value={value} index={0}>
                 <Stocks/>
             </TabPanel>
             <TabPanel value={value} index={1}>
-                <Picks/>
+                <Stocks/>
             </TabPanel>
             <TabPanel value={value} index={2}>
                 <News/>

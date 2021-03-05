@@ -19,7 +19,9 @@
     "react-scripts": "^2.0.5",
     "recharts": "^2.0.7",
     "styled-components": "^5.2.1",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "devextreme": "^20.2.4",
+    "devextreme-react": "20.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -47,7 +49,9 @@
   },
   "devDependencies": {
     "@material-ui/icons": "^4.11.2",
+    "devextreme-react": "^20.2.5",
     "prop-types": "^15.7.2",
-    "react-window": "^1.8.6"
+    "react-window": "^1.8.6",
+    "devextreme-themebuilder": "^20.2.4"
   }
 }

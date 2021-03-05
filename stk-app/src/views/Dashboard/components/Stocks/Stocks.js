@@ -1,11 +1,12 @@
-import {Paper, Grid, Typography} from "@material-ui/core";
+import {Paper, Grid, Typography, GridList, GridListTile} from "@material-ui/core";
 import React from "react";
 import {Area, CartesianGrid, XAxis, YAxis, Tooltip, AreaChart, ResponsiveContainer} from "recharts";
 import {makeStyles} from "@material-ui/core/styles";
+import {VirtualizedList} from "../News/components";
 
 const useStyles = makeStyles({
     paper: {
-        width: '92vw',
+        width: '90vw',
         display: 'block',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -15,6 +16,26 @@ const useStyles = makeStyles({
         paddingLeft: 40,
         paddingRight: 40,
         borderRadius: 10,
+    },
+    paper2: {
+        width: 285,
+        height: 135,
+        marginLeft: 5,
+        marginRight: 5,
+        boxShadow: '0px 5px 30px 0px rgba(50, 50, 50, 0.2)',
+        borderRadius: 10,
+    },
+    gridList: {
+        gridList: {
+            flexWrap: 'nowrap',
+            transform: 'translateZ(0)',
+        },
+    },
+    slider: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        overflow: 'hidden',
     },
 });
 
@@ -65,48 +86,73 @@ const Stocks = () => {
         }
     ]
 
-    return (
-        <Paper className={classes.paper}>
-            <Grid container direction="row" spacing={5}>
-                <Grid item xs={9}>
-                    <div style={{display:"flex", alignItems:"baseline", color: "#111B47"}}>
-                        <Typography
-                            style={{fontSize: 20, fontWeight: 700, textTransform: "uppercase", marginRight: 5}} noWrap>AMER</Typography>
-                        <Typography style={{fontSize: 14, fontWeight: 400, textTransform: "uppercase"}} noWrap>AMER GROUP HOLDING CO SAE</Typography>
-                    </div>
-                    <div style={{display:"flex", alignItems:"baseline"}}>
-                        <Typography
-                            style={{fontSize: 18, fontWeight: 600, textTransform: "uppercase", marginRight: 3}} noWrap>32.58</Typography>
-                        <Typography style={{fontSize: 16, fontWeight: 500, textTransform: "uppercase"}} noWrap>EGP</Typography>
-                    </div>
-                    <div style={{display:"flex", alignItems:"baseline"}}>
-                        <Typography style={{fontSize: 16, fontWeight: 500, textTransform: "uppercase", color: "#6AC37E", marginRight: 3}} noWrap>+0.12</Typography>
-                        <Typography style={{fontSize: 16, fontWeight: 500, textTransform: "uppercase", color: "#6AC37E"}} noWrap>(1.27%)</Typography>
-                    </div>
 
-                    <ResponsiveContainer width="99%" aspect={3}>
-                        <AreaChart data={data} margin={{ top: 30, right: 0, left: 0, bottom: 0 }}>
-                            <defs>
-                                <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-                                    <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
-                                </linearGradient>
-                            </defs>
-                            <XAxis dataKey="name"/>
-                            <YAxis/>
-                            <CartesianGrid strokeDasharray="1" vertical={false}/>
-                            <Tooltip/>
-                            <Area type="monotone" dataKey="amt" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)"/>
-                        </AreaChart>
-                    </ResponsiveContainer>
-                </Grid>
-                <Grid item>
-                    <Typography
-                        style={{fontSize: 20, fontWeight: 500, textTransform: "capitalize"}} >Company Selector</Typography>
-                    <Typography style={{fontSize: 14, fontWeight: 400}} >Lorem ipsum dolor sit amet.</Typography>
-                </Grid>
+    return (
+        <Grid container direction="column">
+            <Grid item>
+                <Paper className={classes.paper}>
+                    <Grid container direction="row" spacing={5} alignItems="stretch">
+                        <Grid item xs={9}>
+                            <div style={{display: "flex", alignItems: "baseline", color: "#111B47"}}>
+                                <Typography
+                                    style={{fontSize: 20, fontWeight: 700, textTransform: "uppercase", marginRight: 5}}
+                                    noWrap>AMER</Typography>
+                                <Typography style={{fontSize: 14, fontWeight: 400, textTransform: "uppercase"}} noWrap>AMER
+                                    GROUP HOLDING CO SAE</Typography>
+                            </div>
+                            <div style={{display: "flex", alignItems: "baseline"}}>
+                                <Typography
+                                    style={{fontSize: 18, fontWeight: 600, textTransform: "uppercase", marginRight: 3}}
+                                    noWrap>32.58</Typography>
+                                <Typography style={{fontSize: 16, fontWeight: 500, textTransform: "uppercase"}}
+                                            noWrap>EGP</Typography>
+                            </div>
+                            <div style={{display: "flex", alignItems: "baseline"}}>
+                                <Typography style={{
+                                    fontSize: 16,
+                                    fontWeight: 500,
+                                    textTransform: "uppercase",
+                                    color: "#6AC37E",
+                                    marginRight: 3
+                                }} noWrap>+0.12</Typography>
+                                <Typography
+                                    style={{
+                                        fontSize: 16,
+                                        fontWeight: 500,
+                                        textTransform: "uppercase",
+                                        color: "#6AC37E"
+                                    }}
+                                    noWrap>(1.27%)</Typography>
+                            </div>
+
+                            <ResponsiveContainer width="99%" aspect={3}>
+                                <AreaChart data={data} margin={{top: 30, right: 0, left: 0, bottom: 0}}>
+                                    <defs>
+                                        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+                                            <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+                                        </linearGradient>
+                                    </defs>
+                                    <XAxis dataKey="name"/>
+                                    <YAxis/>
+                                    <CartesianGrid strokeDasharray="1" vertical={false}/>
+                                    <Tooltip/>
+                                    <Area type="monotone" dataKey="amt" stroke="#8884d8" fillOpacity={1}
+                                          fill="url(#colorUv)"/>
+                                </AreaChart>
+                            </ResponsiveContainer>
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Typography
+                                style={{fontSize: 20, fontWeight: 500, textTransform: "capitalize"}}>Company
+                                Selector</Typography>
+                            <Typography style={{fontSize: 14, fontWeight: 400}}>Lorem ipsum dolor sit amet.</Typography>
+                            <VirtualizedList/>
+                        </Grid>
+                    </Grid>
+                </Paper>
             </Grid>
-        </Paper>
+        </Grid>
     );
 }
 

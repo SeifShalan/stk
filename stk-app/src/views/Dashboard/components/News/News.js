@@ -1,9 +1,16 @@
-import {Grid, Paper} from "@material-ui/core";
+import {Box, Grid, Paper} from "@material-ui/core";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {VirtualizedList} from "./components";
 
 const useStyles = makeStyles({
+    box: {
+        width: '90vw',
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        background: 'none',
+    },
     image: {
         width: 175,
     },
@@ -19,54 +26,53 @@ const News = () => {
     const classes = useStyles();
 
     return (
-        <div style={{height: '60vh', marginLeft: '22', marginRight: '22'}}>
-            <Grid container direction="row" justify="space-between" alignItems="stretch">
-                <Grid item>
-                    <Grid container direction="column" justify="space-evenly" alignItems="flex-start">
-                        <Grid item>
-                            <img
-                                alt="Landing Page"
-                                className={classes.image}
-                                src="/images/almal.png"
-                            />
-                        </Grid>
-                        <Grid item>
-                            <img
-                                alt="Landing Page"
-                                className={classes.image}
-                                src="/images/mubasher.svg"
-                            />
-                        </Grid>
-                        <Grid item>
-                            <img
-                                alt="Landing Page"
-                                className={classes.image}
-                                src="/images/arabfinance.png"
-                            />
-                        </Grid>
-                        <Grid item>
-                            <img
-                                alt="Landing Page"
-                                className={classes.image}
-                                src="/images/alborsa.png"
-                            />
-                        </Grid>
-                        <Grid item>
-                            <img
-                                alt="Landing Page"
-                                className={classes.image}
-                                src="/images/amwal.png"
-                            />
-                        </Grid>
+        <Grid container direction="row" justify="space-between" alignItems="center"
+              style={{marginLeft: 'auto', marginRight: 'auto'}}>
+            <Grid item>
+                <Grid container direction="column" justify="space-evenly" alignItems="flex-start">
+                    <Grid item>
+                        <img
+                            alt="Landing Page"
+                            className={classes.image}
+                            src="/images/almal.png"
+                        />
+                    </Grid>
+                    <Grid item>
+                        <img
+                            alt="Landing Page"
+                            className={classes.image}
+                            src="/images/mubasher.svg"
+                        />
+                    </Grid>
+                    <Grid item>
+                        <img
+                            alt="Landing Page"
+                            className={classes.image}
+                            src="/images/arabfinance.png"
+                        />
+                    </Grid>
+                    <Grid item>
+                        <img
+                            alt="Landing Page"
+                            className={classes.image}
+                            src="/images/alborsa.png"
+                        />
+                    </Grid>
+                    <Grid item>
+                        <img
+                            alt="Landing Page"
+                            className={classes.image}
+                            src="/images/amwal.png"
+                        />
                     </Grid>
                 </Grid>
-                <Grid item xs={10}>
-                    <Paper className={classes.paper}>
-                        <VirtualizedList/>
-                    </Paper>
-                </Grid>
             </Grid>
-        </div>
+            <Grid item xs={10}>
+                <Paper className={classes.paper}>
+                    <VirtualizedList/>
+                </Paper>
+            </Grid>
+        </Grid>
     );
 }
 

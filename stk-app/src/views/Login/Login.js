@@ -40,10 +40,10 @@ const loginTheme = createMuiTheme({
         ].join(','),
     },
     overrides: {
-        MuiInputLabel: { // Name of the component ⚛️ / style sheet
-            root: { // Name of the rule
+        MuiInputLabel: {
+            root: {
                 color: "white",
-                "&$focused": { // increase the specificity for the pseudo class
+                "&$focused": {
                     color: '#3A5FFF'
                 }
             }
