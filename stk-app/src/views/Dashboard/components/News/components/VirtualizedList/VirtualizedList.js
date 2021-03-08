@@ -1,20 +1,25 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import {} from '@material-ui/core';
-import SelectBox from 'devextreme-react/select-box';
+import {Grid} from '@material-ui/core';
 import List from 'devextreme-react/list';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
-        height: 400,
+        height: 600,
         backgroundColor: theme.palette.background.paper,
     },
+    div: {
+        direction: 'rtl',
+    },
+    image: {
+        width: 175,
+    },
+    list: {
+        height: 300,
+    }
 }));
 
-function ItemTemplate(data) {
-    return <div>{data.Name}</div>;
-}
 export const products = [{
     'ID': 1,
     'Name': 'HD Video Player',
@@ -161,19 +166,37 @@ export const products = [{
     'ImageSrc': 'images/products/19.png'
 }];
 
+function renderRow(data) {
+    return (
+        <div>
+            <Grid container style={{direction: 'rtl'}} direction='row' justify='flex-start' alignItems='center'>
+                <Grid item>
+                    <img
+                        alt="Landing Page"
+                        src="/images/almal.png"
+                    />
+                </Grid>
+                <Grid item>
+                    أهلاً
+                </Grid>
+                <Grid item>
+
+                </Grid>
+            </Grid>
+        </div>
+    );
+}
 
 const VirtualizedList = () => {
     const classes = useStyles();
 
     return (
-        <div className="list-container">
+        <div className={classes.root}>
             <List
                 dataSource={products}
-                height={400}
-                itemRender={ItemTemplate}
-                searchExpr="Name"
-                searchEnabled={true}
-                searchMode={'contains'}/>
+                height={600}
+                itemRender={renderRow}
+            />
         </div>
     );
 }

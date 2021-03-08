@@ -1,8 +1,8 @@
-import {Paper, Grid, Typography, GridList, GridListTile} from "@material-ui/core";
+import {Paper, Grid, Typography} from "@material-ui/core";
 import React from "react";
 import {Area, CartesianGrid, XAxis, YAxis, Tooltip, AreaChart, ResponsiveContainer} from "recharts";
 import {makeStyles} from "@material-ui/core/styles";
-import {VirtualizedList} from "../News/components";
+import {VirtualizedList} from "../Stocks/components";
 
 const useStyles = makeStyles({
     paper: {

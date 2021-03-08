@@ -1,16 +1,8 @@
 import React, {useState} from 'react';
-import {makeStyles, withStyles} from "@material-ui/core/styles";
+import {withStyles} from "@material-ui/core/styles";
 import {Tabs, Tab, Box, Fade, Modal, Backdrop} from "@material-ui/core";
-import {News, Picks, Stocks, Header, UserModal} from './components';
+import {News, Stocks, Header, UserModal} from './components';
 import PropTypes from 'prop-types';
-
-const useStyles = makeStyles({
-    container: {
-        height: '100vh',
-        background: "#F5F5F5",
-    },
-
-});
 
 const StyledTabs = withStyles({
     indicator: {
@@ -74,7 +66,6 @@ function a11yProps(index) {
 
 
 const Dashboard = () => {
-    const classes = useStyles();
     const [value, setValue] = useState(0);
     const [open, setOpen] = useState(false);
 

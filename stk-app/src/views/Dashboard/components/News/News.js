@@ -1,4 +1,4 @@
-import {Box, Grid, Paper} from "@material-ui/core";
+import {Grid, Paper} from "@material-ui/core";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {VirtualizedList} from "./components";
@@ -16,9 +16,8 @@ const useStyles = makeStyles({
     },
     paper: {
         boxShadow: '0px 5px 30px 0px rgba(50, 50, 50, 0.2)',
-        paddingTop: 10,
-        paddingBottom: 10,
         borderRadius: 10,
+        overflow: 'hidden',
     },
 });
 
