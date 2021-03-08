@@ -1,7 +1,8 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import {Grid} from '@material-ui/core';
+import {Grid, Typography} from '@material-ui/core';
 import List from 'devextreme-react/list';
+import {ArrowBackIos} from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -169,18 +170,37 @@ export const products = [{
 function renderRow(data) {
     return (
         <div>
-            <Grid container style={{direction: 'rtl'}} direction='row' justify='flex-start' alignItems='center'>
+            <Grid container style={{direction: 'rtl', height: 170, paddingRight: 15, paddingLeft: 15, paddingTop: 10, paddingBottom: 10}} direction='row' justify='space-between' alignItems='center' spacing={3}>
                 <Grid item>
                     <img
                         alt="Landing Page"
+                        style={{height: 100}}
                         src="/images/almal.png"
                     />
                 </Grid>
-                <Grid item>
-                    أهلاً
+                <Grid item xs={9}>
+                    <Grid container direction="column">
+                        <Grid item>
+                            <Typography style={{fontSize: 18, fontWeight: 700}}>«الصحة» تجتمع مع «بشاي للصلب» لتوفير مخزون استراتيجي من الأكسجين
+                                الطبي</Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography style={{fontSize: 16, fontWeight: 400}}> 9:32 م, الأربعاء, 9 ديسمبر 20</Typography>
+                        </Grid>
+                        <Grid item>
+                            <p style={{whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}>
+                            عقدت الدكتورة هالة زايد ، وزيرة الصحة والسكان ، اجتماعًا، اليوم الأربعاء، مع
+                            المهندس كمال بشاي رئيس مجلس إدارة مجموعة شركات “بشاي” للصلب، لمناقشة سبل التعاون في
+                            تلبية احتياجات المستشفيات من الأكسجين الطبي.
+                            جاء ذلك بحضور كل من اللواء وائل الساعي، مساعد وزيرة الصحة والسكان للشئون المالية
+                            والإدارية، والدكتور محمد حسانين، رئيس قطاع الدعم الفني والمشروعات بوزارة الصحة، وذلك
+                            بديوان عام وزارة الصحة والسكان.
+                            </p>
+                        </Grid>
+                    </Grid>
                 </Grid>
                 <Grid item>
-
+                    <ArrowBackIos/>
                 </Grid>
             </Grid>
         </div>
@@ -193,6 +213,7 @@ const VirtualizedList = () => {
     return (
         <div className={classes.root}>
             <List
+                focusStateEnabled={false}
                 dataSource={products}
                 height={600}
                 itemRender={renderRow}
@@ -200,5 +221,4 @@ const VirtualizedList = () => {
         </div>
     );
 }
-
 export default VirtualizedList;

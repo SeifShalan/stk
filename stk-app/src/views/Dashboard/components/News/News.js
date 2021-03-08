@@ -1,18 +1,19 @@
 import {Grid, Paper} from "@material-ui/core";
-import React from "react";
+import React, {useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {VirtualizedList} from "./components";
 
 const useStyles = makeStyles({
     box: {
-        width: '90vw',
-        display: 'block',
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        width: '100vw',
         background: 'none',
     },
     image: {
         width: 175,
+    },
+    gray: {
+        width: 175,
+        filter: 'grayscale(100%)'
     },
     paper: {
         boxShadow: '0px 5px 30px 0px rgba(50, 50, 50, 0.2)',
@@ -23,44 +24,54 @@ const useStyles = makeStyles({
 
 const News = () => {
     const classes = useStyles();
+    const [value, setValue] = useState(1);
+
+    const handleClick = newValue => () => {
+        setValue(newValue);
+    };
 
     return (
-        <Grid container direction="row" justify="space-between" alignItems="center"
-              style={{marginLeft: 'auto', marginRight: 'auto'}}>
+        <Grid container direction="row" alignItems="center" justify="space-around" className={classes.box} spacing={7}>
             <Grid item>
-                <Grid container direction="column" justify="space-evenly" alignItems="flex-start">
+                <Grid container direction="column" justify="space-between" alignItems="flex-start"
+                      style={{height: 600}}>
                     <Grid item>
                         <img
-                            alt="Landing Page"
-                            className={classes.image}
+                            alt="Almal Logo"
+                            className={value === 1 ? classes.image : classes.gray}
+                            onClick={handleClick(1)}
                             src="/images/almal.png"
                         />
                     </Grid>
                     <Grid item>
                         <img
-                            alt="Landing Page"
-                            className={classes.image}
+                            alt="Mubasher Logo"
+                            className={value === 2 ? classes.image : classes.gray}
+                            onClick={handleClick(2)}
                             src="/images/mubasher.svg"
                         />
                     </Grid>
                     <Grid item>
                         <img
-                            alt="Landing Page"
-                            className={classes.image}
+                            alt="Arab Finance Logo"
+                            className={value === 3 ? classes.image : classes.gray}
+                            onClick={handleClick(3)}
                             src="/images/arabfinance.png"
                         />
                     </Grid>
                     <Grid item>
                         <img
-                            alt="Landing Page"
-                            className={classes.image}
+                            alt="Alborsa Logo"
+                            className={value === 4 ? classes.image : classes.gray}
+                            onClick={handleClick(4)}
                             src="/images/alborsa.png"
                         />
                     </Grid>
                     <Grid item>
                         <img
-                            alt="Landing Page"
-                            className={classes.image}
+                            alt="Amwal Alghad Logo"
+                            className={value === 5 ? classes.image : classes.gray}
+                            onClick={handleClick(5)}
                             src="/images/amwal.png"
                         />
                     </Grid>
