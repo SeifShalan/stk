@@ -4,11 +4,6 @@ import {Typography} from '@material-ui/core';
 import List from 'devextreme-react/list';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        width: '100%',
-        height: 400,
-        backgroundColor: theme.palette.background.paper,
-    },
     div: {
         marginTop: 20,
     },

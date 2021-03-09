@@ -6,15 +6,8 @@ import {VirtualizedList} from "../Stocks/components";
 
 const useStyles = makeStyles({
     paper: {
-        width: '90vw',
-        display: 'block',
-        marginLeft: 'auto',
-        marginRight: 'auto',
         boxShadow: '0px 5px 30px 0px rgba(50, 50, 50, 0.2)',
-        paddingTop: 40,
-        paddingBottom: 40,
-        paddingLeft: 40,
-        paddingRight: 40,
+        padding: 40,
         borderRadius: 10,
     },
     paper2: {
@@ -89,7 +82,7 @@ const Stocks = () => {
 
     return (
         <Grid container direction="column">
-            <Grid item>
+            <Grid item xs={12}>
                 <Paper className={classes.paper}>
                     <Grid container direction="row" spacing={5} alignItems="stretch">
                         <Grid item xs={9}>

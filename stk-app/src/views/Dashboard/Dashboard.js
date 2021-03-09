@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {withStyles} from "@material-ui/core/styles";
 import {Tabs, Tab, Box, Fade, Modal, Backdrop} from "@material-ui/core";
-import {News, Stocks, Header, UserModal} from './components';
+import {News, Stocks, Header, UserModal, Home} from './components';
 import PropTypes from 'prop-types';
 
 const StyledTabs = withStyles({
@@ -101,7 +101,7 @@ const Dashboard = () => {
                 <StyledTab label="News" {...a11yProps(2)} />
             </StyledTabs>
             <TabPanel value={value} index={0}>
-                <Stocks/>
+                <Home/>
             </TabPanel>
             <TabPanel value={value} index={1}>
                 <Stocks/>

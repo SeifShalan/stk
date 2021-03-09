@@ -31,10 +31,10 @@ const News = () => {
     };
 
     return (
-        <Grid container direction="row" alignItems="center" justify="space-around" className={classes.box} spacing={7}>
+        <Grid container direction="row" alignItems="center" justify="center" spacing={8}>
             <Grid item>
-                <Grid container direction="column" justify="space-between" alignItems="flex-start"
-                      style={{height: 600}}>
+                <Grid container direction="column" justify="space-between" alignItems="center"
+                      style={{height: 650}}>
                     <Grid item>
                         <img
                             alt="Almal Logo"

@@ -5,11 +5,6 @@ import List from 'devextreme-react/list';
 import {ArrowBackIos} from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        width: '100%',
-        height: 600,
-        backgroundColor: theme.palette.background.paper,
-    },
     div: {
         direction: 'rtl',
     },
@@ -215,7 +210,7 @@ const VirtualizedList = () => {
             <List
                 focusStateEnabled={false}
                 dataSource={products}
-                height={600}
+                height={650}
                 itemRender={renderRow}
             />
         </div>
