@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         boxShadow: '0px 5px 30px 0px rgba(50, 50, 50, 0.2)',
         borderRadius: 10,
+        height: 545,
         padding: 40,
     },
     button: {

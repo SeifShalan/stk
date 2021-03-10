@@ -73,10 +73,26 @@ const Stocks = () => {
         },
         {
             "name": "7",
-            "uv": 3490,
+            "uv": 4300,
             "pv": 4300,
             "amt": 2100
-        }
+        },
+        {
+            "name": "8",
+            "uv": 4300,
+            "gg": 4300,
+            "amt": 2100
+        },
+        {
+            "name": "9",
+            "uv": 4500,
+            "amt": 2100
+        },
+        {
+            "name": "10",
+            "uv": 4100,
+            "amt": 2100
+        },
     ]
 
 
@@ -121,16 +137,18 @@ const Stocks = () => {
                             <ResponsiveContainer width="99%" aspect={3}>
                                 <AreaChart data={data} margin={{top: 30, right: 0, left: 0, bottom: 0}}>
                                     <defs>
-                                        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-                                            <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+                                        <linearGradient id="colorUv" x1="0" y1="0" x2="1" y2="0">
+                                            <stop offset="5%" stopColor="gray" stopOpacity={0.8}/>
+                                            <stop offset="70%" stopColor="gray" stopOpacity={0.8}/>
+                                            <stop offset="70%" stopColor="green" stopOpacity={0.8}/>
+                                            <stop offset="95%" stopColor="green" stopOpacity={0.8}/>
                                         </linearGradient>
                                     </defs>
                                     <XAxis dataKey="name"/>
                                     <YAxis/>
                                     <CartesianGrid strokeDasharray="1" vertical={false}/>
                                     <Tooltip/>
-                                    <Area type="monotone" dataKey="amt" stroke="#8884d8" fillOpacity={1}
+                                    <Area type="monotone" dataKey="uv" stroke="#8884d8" fillOpacity={1}
                                           fill="url(#colorUv)"/>
                                 </AreaChart>
                             </ResponsiveContainer>

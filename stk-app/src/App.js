@@ -1,5 +1,7 @@
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
+import "react-grid-layout/css/styles.css";
+import "react-resizable/css/styles.css";
 import './App.css';
 import Loading from './components/Loading'
 import React, {Suspense} from "react";

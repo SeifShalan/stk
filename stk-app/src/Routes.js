@@ -7,6 +7,7 @@ const Register = lazy(() => import("./views/Register"));
 const NotFound = lazy(() => import("./views/NotFound"));
 const Loading = lazy(() => import("./components/Loading"));
 const Dashboard = lazy(() => import("./views/Dashboard"));
+const Test = lazy(() => import("./views/Test"));
 
 const Routes = () => {
     return (
@@ -16,6 +17,7 @@ const Routes = () => {
             <Route path="/register" component={Register} />
             <Route path="/loading" component={Loading} />
             <Route path="/dashboard" component={Dashboard} />
+            <Route path="/test" component={Test} />
             <Route component={NotFound} />
         </Switch>
     );
