@@ -19,7 +19,9 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         boxShadow: '0px 5px 30px 0px rgba(50, 50, 50, 0.2)',
         borderRadius: 10,
-        height: 545,
+        height: 512,
+        flex: 1,
+        overflow: 'hidden',
         padding: 40,
     },
     button: {
@@ -146,11 +148,11 @@ ValueLabelComponent.propTypes = {
 const marks = [
     {
         value: 0,
-        label: '0%',
+        label: '0',
     },
     {
         value: 100,
-        label: '100%',
+        label: '100',
     },
 ];
 
@@ -185,7 +187,7 @@ const Calculator = () => {
 
     return (
         <Paper className={classes.paper}>
-            <Grid container direction='column' spacing={3}>
+            <Grid container direction='column' spacing={2}>
                 <Grid item>
                     <Typography
                         style={{fontSize: 20, fontWeight: 500, textTransform: "capitalize"}}>Investment Calculator</Typography>
@@ -225,7 +227,7 @@ const Calculator = () => {
                     </ButtonGroup>
                 </Grid>
                 <Grid item>
-                    <Typography style={{fontSize: 14, fontWeight: 400, marginBottom: 2, color: '#6f6f6f'}}>Prediction Accuracy</Typography>
+                    <Typography style={{fontSize: 14, fontWeight: 400, marginBottom: 2, color: '#6f6f6f'}}>Trust Factor</Typography>
                     <Slider
                         value={slider}
                         onChange={handleSliderChange}
