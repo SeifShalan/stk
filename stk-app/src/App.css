@@ -7,5 +7,7 @@
   --rmsc-bg: #fff !important;
   --rmsc-p: 10px; /* Spacing */
   --rmsc-radius: 5px !important; /* Radius */
-  --rmsc-h: 56px !important; /* Height */
+  --rmsc-h: 40px !important; /* Height */
 }
+
+html {background-color: #F5F5F5}

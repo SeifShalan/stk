@@ -86,7 +86,7 @@ const Favorite = () => {
             <IconButton style={{padding: 0, position: "absolute", top: '20px', right: '12px',}}>
                 <MoreVert/>
             </IconButton>
-            <Grid container direction="column" justify="space-between" alignItems="flex-start">
+            <Grid container direction="column" justify="space-between" alignItems="stretch">
                 <Grid item>
                     <Typography
                         style={{fontSize: 16, fontWeight: 700, textTransform: "uppercase"}}
@@ -94,11 +94,61 @@ const Favorite = () => {
                     <Typography style={{fontSize: 12, fontWeight: 400, textTransform: "uppercase"}} noWrap>AMER
                         GROUP HOLDING CO SAE</Typography>
                 </Grid>
+                <Grid item>
+                    <Grid container direction="row" justify="space-between" alignItems="flex-end">
+                        <Grid item style={{display: "flex", alignItems: "baseline"}}>
+                            <Typography
+                                style={{fontSize: 18, fontWeight: 600, textTransform: "uppercase", marginRight: 3}}
+                                noWrap>32.58</Typography>
+                            <Typography style={{fontSize: 16, fontWeight: 500, textTransform: "uppercase"}}
+                                        noWrap>EGP</Typography>
+                        </Grid>
+                        <Grid item style={{display: "flex", alignItems: "baseline"}}>
+                            <Typography style={{
+                                fontSize: 17,
+                                fontWeight: 500,
+                                textTransform: "uppercase",
+                                color: "#6AC37E",
+                                marginRight: 3
+                            }} noWrap>+0.12</Typography>
+                            <Typography
+                                style={{
+                                    fontSize: 17,
+                                    fontWeight: 500,
+                                    textTransform: "uppercase",
+                                    color: "#6AC37E"
+                                }}
+                            >(+1.27%)</Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid item style={{marginTop: 15}}>
+                        <Grid container direction="row" justify="space-between" alignItems="flex-end">
+                            <Grid item>
+                                <Typography
+                                    style={{fontSize: 16, fontWeight: 500, textTransform: "capitalize"}}
+                                    noWrap>Stk. Rating</Typography>
+                                <Typography style={{fontSize: 16, fontWeight: 400, textTransform: "uppercase"}}
+                                            noWrap>3.5</Typography>
+                            </Grid>
+                            <Grid item style={{textAlign: 'right'}}>
+                                <Typography
+                                    style={{fontSize: 16, fontWeight: 500, textTransform: "capitalize"}}
+                                    noWrap>Trust Factor</Typography>
+                                <div style={{display: "flex", justifyContent: 'flex-end'}}>
+                                    <Typography style={{fontSize: 16, fontWeight: 400, textTransform: "uppercase"}}
+                                                noWrap>67</Typography>
+                                    <Typography style={{fontSize: 10, fontWeight: 400, textTransform: "uppercase",  lineHeight: 2}}
+                                                noWrap>/100</Typography>
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
                 <div className={classes.chart}>
                     <ResponsiveLine
                         data={data}
                         curve="basis"
-                        margin={{top: 10}}
+                        margin={{top: 15}}
                         enablePoints={false}
                         enableGridX={false}
                         enableGridY={false}
@@ -106,18 +156,19 @@ const Favorite = () => {
                         isInteractive={false}
                         defs={[
                             linearGradientDef('gradientA', [
-                                { offset: 0, color: 'inherit' },
-                                { offset: 100, color: 'inherit', opacity: 0 },
+                                {offset: 0, color: 'inherit'},
+                                {offset: 100, color: 'inherit', opacity: 0},
                             ]),
                         ]}
                         fill={[
-                            { match: '*', id: 'gradientA' },
+                            {match: '*', id: 'gradientA'},
                         ]}
-                        />
+                    />
                 </div>
             </Grid>
         </Paper>
-    );
+    )
+        ;
 }
 
 export default Favorite;

@@ -32,7 +32,7 @@ const Landing = () => {
     const classes = useStyles();
 
     return (
-        <>
+        <div style={{height: '100vh', background: "#fff"}}>
             <Header/>
             <Grid container direction="row" justify="center" alignItems="center">
                 <Grid item xs={3}>
@@ -55,7 +55,7 @@ const Landing = () => {
                 </Grid>
             </Grid>
             <Footer/>
-        </>
+        </div>
     );
 }
 

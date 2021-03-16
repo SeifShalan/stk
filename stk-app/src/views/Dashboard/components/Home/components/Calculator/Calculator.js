@@ -79,6 +79,7 @@ const useStylesField = makeStyles((theme) => ({
     root: {
         overflow: 'hidden',
         borderRadius: 5,
+        height: 42,
         border: 'none',
         backgroundColor: '#fff',
         transition: theme.transitions.create(['border-color', 'box-shadow']),
@@ -187,7 +188,7 @@ const Calculator = () => {
 
     return (
         <Paper className={classes.paper}>
-            <Grid container direction='column' spacing={2}>
+            <Grid container direction='column' spacing={3}>
                 <Grid item>
                     <Typography
                         style={{fontSize: 20, fontWeight: 500, textTransform: "capitalize"}}>Investment Calculator</Typography>

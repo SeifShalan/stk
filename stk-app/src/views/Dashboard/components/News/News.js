@@ -4,10 +4,6 @@ import {makeStyles} from "@material-ui/core/styles";
 import {VirtualizedList} from "./components";
 
 const useStyles = makeStyles({
-    box: {
-        width: '100vw',
-        background: 'none',
-    },
     image: {
         width: 175,
     },
@@ -31,7 +27,7 @@ const News = () => {
     };
 
     return (
-        <Grid container direction="row" alignItems="center" justify="center" spacing={8}>
+        <Grid container direction="row" alignItems="center" justify="center" spacing={5}>
             <Grid item>
                 <Grid container direction="column" justify="space-between" alignItems="center"
                       style={{height: 650}}>
